@@ -9,7 +9,7 @@ It follows the Page Object Model (POM) design pattern to ensure scalability, rea
 ![TestNG](https://img.shields.io/badge/TestNG-Framework-red)
 
 ---
-## Overview
+## 🚀 Overview
 
 This project demonstrates a maintainable Selenium test framework with reusable page objects, TestNG data providers, explicit waits, screenshot capture, and ExtentReports output.
 
@@ -21,15 +21,27 @@ It currently covers:
 - Product sorting checks
 - Data-driven runs with multiple SauceDemo users
 ---
-## Tech Stack
+## 🛠 Tech Stack
 
 - Java 21
 - Maven
 - Selenium WebDriver 4
 - TestNG
+- ExtentReports
+- GitHub Actions (CI/CD)
+- Apache Commons IO
 
 ---
-## Project Structure
+##  🔥 Key Features
+- Page Object Model (POM) architecture
+- Data-driven testing using TestNG DataProvider
+- Automated CI/CD pipeline (GitHub Actions)
+- ExtentReports integration for test reporting
+- Screenshot capture for test evidence
+- Headless browser execution support
+
+---
+## 📁 Project Structure
 
 ```text
 src/main/java/Pages/     Page objects
@@ -41,7 +53,7 @@ testng.xml               Suite definition
 pom.xml                  Maven build configuration
 ```
 ---
-## Test Coverage
+## 🧪 Test Coverage
 
 - Valid login
 - Invalid login
@@ -66,7 +78,7 @@ pom.xml                  Maven build configuration
 
 ---
 
-## Running the Tests
+##  ▶️ Running the Tests
 
 Run the full suite:
 
@@ -87,7 +99,7 @@ mvn -Dtest=LoginTests#invalidLoginTest test
 ```
 ---
 
-## Screenshots
+## 📸 Screenshots
 ### Sorting (Price High to Low) <br>
 ![price high to low](screenshots/price_high_low.png)
 
@@ -108,7 +120,7 @@ mvn -Dtest=LoginTests#invalidLoginTest test
 
 ---
 
-## Reporting
+## 📊 Reporting
 
 After execution, the framework generates:
 
@@ -126,7 +138,7 @@ After execution, the framework generates:
 - `Readme.md` is kept in the repo, but `README.md` is the file GitHub will render.
 
 ---
-## Author
+## 👨‍💻 Author
 
 Deshanth Vishvalingam
 
