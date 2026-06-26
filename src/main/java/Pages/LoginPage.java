@@ -20,6 +20,11 @@ public class LoginPage extends BasePage {
         type(password, pass);
         click(loginButton);
 
+        wait.until(webDriver ->
+                webDriver.findElements(By.id("inventory_container")).size() > 0
+                        || webDriver.findElements(errorMessage).size() > 0
+        );
+
         return new InventoryPage(driver);
     }
 
