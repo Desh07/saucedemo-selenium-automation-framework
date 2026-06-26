@@ -1,128 +1,132 @@
-# 🧪 Selenium SauceDemo Automation Framework
+# Selenium Automation Learning
 
-## 📌 Project Overview
-This project is a **UI test automation framework** built using **Selenium WebDriver and TestNG** to test the [SauceDemo](https://www.saucedemo.com/) e-commerce application.
+This project is a UI test automation framework built using Selenium WebDriver and TestNG to test the SauceDemo e-commerce application.
 
-It follows the **Page Object Model (POM)** design pattern to ensure **scalability, readability, and maintainability** of test automation code.
+It follows the Page Object Model (POM) design pattern to ensure scalability, readability, and maintainability of test automation code.<br>
+
+![Java](https://img.shields.io/badge/Java-21-blue)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-green)
+![TestNG](https://img.shields.io/badge/TestNG-Framework-red)
 
 ---
+## Overview
 
-## 🛠 Tech Stack
-- Java
-- Selenium WebDriver
-- TestNG
+This project demonstrates a maintainable Selenium test framework with reusable page objects, TestNG data providers, explicit waits, screenshot capture, and ExtentReports output.
+
+It currently covers:
+
+- Login validation
+- Inventory page checks
+- Add to cart and remove from cart flows
+- Product sorting checks
+- Data-driven runs with multiple SauceDemo users
+---
+## Tech Stack
+
+- Java 21
 - Maven
-- Page Object Model (POM)
-- ExtentReports (for reporting)
-- WebDriverWait (Explicit waits)
+- Selenium WebDriver 4
+- TestNG
 
 ---
+## Project Structure
 
-## ⚙️ Framework Features
-
-- Page Object Model (POM) design pattern
-- Maven-based project structure
-- TestNG test framework
-- Data-driven testing (TestNG DataProvider)
-- Reusable utility methods for UI actions
-- Explicit waits for handling dynamic elements
-- Screenshot capture for test validation and debugging
-- ExtentReports integration for detailed test reporting
-- Automated cart workflow testing
-
----
-
-## 📁 Project Structure
-
-- `pages/` → Page Object Model classes (LoginPage, InventoryPage, CartPage)
-- `tests/` → TestNG test cases
-- `base/` → WebDriver setup and test configuration
-- `utils/` → Utility classes (Screenshots, Data Providers, Reports)
-
----
-
-## 🧪 Test Scenarios Covered
-
-✔ Login with valid credentials  
-✔ Login with invalid credentials  
-✔ Login with empty credentials  
-✔ Inventory page load validation  
-✔ Add product to cart  
-✔ Open cart validation  
-✔ Remove product from cart  
-✔ Cart empty validation  
-✔ Product sorting validation (A–Z, Z–A, Price Low–High, High–Low)  
-✔ Product count verification using multiple user data sets
-
----
-
-## 🔄 Test Execution Flow
-
-Login → Inventory → Add to Cart → Open Cart → Remove Item → Validate Result
-
----
-
-## 📸 Screenshots
-
-### Invalid Login Test
-![Invalid Login](screenshots/invalid_login_test.png)
-
-### Empty Login Test
-![Empty Login](screenshots/empty_login.png)
-
-### Add to Cart
-![Add to cart](screenshots/add_to_cart.png)
-
-### Cart with Product
-![Cart with Product](screenshots/cart_with_item.png)
-
-### Empty Cart After Removal
-![Empty Cart](screenshots/cart_after_removal.png)
-
-### Price Low to High Sorting
-![Price Low-High](screenshots/price_low_high.png)
----
-
-## 🚀 How to Run This Project
-
-### Prerequisites:
-- Java installed
-- Maven installed
-- Chrome browser
-
-### Steps:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+```text
+src/main/java/Pages/     Page objects
+src/test/java/base/      WebDriver setup and teardown
+src/test/java/tests/     TestNG test classes
+src/test/java/utils/     Test data, reports, screenshots
+screenshots/             Captured test evidence
+testng.xml               Suite definition
+pom.xml                  Maven build configuration
 ```
-```bash
-cd YOUR_REPO
-```
+---
+## Test Coverage
+
+- Valid login
+- Invalid login
+- Empty login submission
+- Inventory page visibility
+- Add item to cart
+- Open cart and verify contents
+- Remove item from cart
+- Sort products A to Z
+- Sort products Z to A
+- Sort products by price low to high
+- Sort products by price high to low
+- Product count validation with multiple users
+
+---
+## Prerequisites
+
+- Java 21
+- Maven 3.9+
+- Google Chrome installed
+- Internet access for SauceDemo
+
+---
+
+## Running the Tests
+
+Run the full suite:
+
 ```bash
 mvn clean test
 ```
 
----
-## 📊 Reports
-- ExtentReports HTML report is generated after test execution
-- Screenshots are attached for key test steps
-- Helps in debugging failures and tracking execution flow
----
+Run a single test class:
 
-## 🎯 What I Learned
-- Building automation frameworks using Selenium WebDriver
-- Implementing Page Object Model (POM) architecture
-- Writing maintainable and reusable test code
-- Handling dynamic web elements using explicit waits
-- Data-driven testing using TestNG
-- Designing scalable QA automation frameworks
+```bash
+mvn -Dtest=LoginTests test
+```
 
+Run a single test method:
+
+```bash
+mvn -Dtest=LoginTests#invalidLoginTest test
+```
 ---
 
-## 📂 GitHub Repository
-https://github.com/YOUR_USERNAME/YOUR_REPO
+## Screenshots
+### Sorting (Price High to Low) <br>
+![price high to low](screenshots/price_high_low.png)
+
+### Sorting (Z-A) <br>
+![Sorting (Z-A)](screenshots/ZA_sort.png)
+
+### Cart with Item <br>
+![Cart with Item](screenshots/cart_with_item.png)
+
+### Cart After Removal <br>
+![Cart after removal](screenshots/cart_after_removal.png)
+
+### Invalid Login <br>
+![Invalid Login](screenshots/invalid_login_test.png)
+
+### Empty Login <br>
+![Empty Login](screenshots/empty_login.png)
 
 ---
-## 👨‍💻 Author
-Deshanth Vishvalingam <br>
-QA Engineer | Test Automation Enthusiast | Web Development Freelancer
+
+## Reporting
+
+After execution, the framework generates:
+
+- TestNG/Surefire output in `target/surefire-reports`
+- ExtentReports HTML output in `test-output/ExtentReport.html`
+- Screenshots in `screenshots/`
+
+---
+
+## Notes
+
+- Tests use explicit waits in the page objects.
+- WebDriver setup opens SauceDemo automatically before each test.
+- Chrome runs in headless mode in the current test configuration.
+- `Readme.md` is kept in the repo, but `README.md` is the file GitHub will render.
+
+---
+## Author
+
+Deshanth Vishvalingam
+
